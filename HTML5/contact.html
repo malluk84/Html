@@ -33,20 +33,21 @@
         <section>
             <form action="" method="get">
                 <label for="imie">
-                    Imie: <input type="text" id="imie" name="nameImput">
+                    Imie: <input type="text" id="imie" name="nameImput" required placeholder="Podaj swoje imię">
                 </label>
                 <label for="nazwisko">
-                    Nazwisko: <input type="text" id="nazwisko" name="lastnameImput">
+                    Nazwisko: <input type="text" id="nazwisko" name="lastnameImput" required
+                        placeholder="Podaj swoje nazwisko">
                 </label>
                 <br>
                 <br>
                 <label for="email">
-                    E-mail: <input type="email" id="email" name="emailInput">
+                    E-mail: <input type="email" id="email" name="emailInput" required placeholder="Podaj swój e-mail">
                 </label>
                 <br>
                 <br>
                 <label for="telefon">
-                    Telefon: <input type="tel" id="telefon" name="telInput">
+                    Telefon: <input type="tel" id="telefon" name="telInput" required placeholder="Podaj swój numer">
                 </label>
                 <br>
                 <br>
@@ -81,12 +82,18 @@
                 </div>
                 <br>
                 <br>
+                <label for="msg">
+                    <textarea name="msg" id="msg" cols="30" rows="10" placeholder="Napisz swoją wiadomość"></textarea>
+                    </textarea>
+                </label>
+
                 <input type="submit" value="Wyslij">
             </form>
         </section>
     </main>
 
-    <footer>
+    <footer class="bottom">
+        &copy;opy by ŁM
     </footer>
 
 </body>
