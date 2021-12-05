@@ -1,3 +1,10 @@
+/* 1rem to zawsze wartość font-size na root element (<html>) */
+
+html {
+    font-size: 10px; /* 1rem = 10px */
+    /* padding: 20px; NIE WCHODZI W SKŁAD JEDNOSTKI "rem" */
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #0C2840;
@@ -60,17 +67,76 @@ header.topHeader ul li a:hover {
     background-color: wheat;
 }
 
+.headerFixed {
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+}
+
 /* header - end */
 
 h1 {
     color: #A3BFBF;
     font-weight: 700;
+    font-size: 2.4rem;
+    padding: 1rem;
+    margin-top: 20px;
 }
+
+/* odnosimy się do pierwszej litery tagu <h1> */
+h1::first-letter {
+    color: tomato;
+}
+
+/* dodawanie elementu przed naszym tagiem H1 (wewnątrz <h1> </h1>) */
+h1::before {
+    content: "- ";
+    color: black;
+}
+
+/* dodawanie elementu po naszym tagu H1 (wewnątrz <h1> </h1>) */
+h1::after {
+    content: '.';
+    color: red;
+}
+
+/* main */
+
+main section p {
+    margin: 1rem 0;
+    font-size: 2rem;
+    padding: 0px 0.5rem;
+}
+
+main section p:first-of-type {
+    margin-top: 5rem;
+}
+
+.mainMarginTop {
+    margin-top: 110px;
+}
+
+/* main - end */
+
+
 
 /* form */
 
 form#contactForm {
-    width: 50%;
+    width: 30rem;
+
+    /* jednostki */
+    /* px, %, pt - 1.33px, vh, vw */
+
+    /* vh - wysokość viewportu (ekranu), 100vh - 100% wysokości ekranu */
+    /* vw - szerokość viewportu (ekranu), 50vw - 50% szerokości ekranu */
+
+    /* em, rem */
+
+    /* em - font-size elementu nadrzędnego */
+    /* rem - font-size root element */
+    
 }
 
 form#contactForm input,
@@ -220,3 +286,17 @@ p {
 #test #main {
     color: blue;
 } */
+
+/* mobile-first -> min-width */
+@media screen and (min-width: 426px) {
+    h1 {
+        font-size: 4rem;
+    }
+}
+
+/* desktop-first -> max-width */
+@media screen and (max-width: 425px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+}
