@@ -1,3 +1,49 @@
 body {
     font-family: 'Barlow', sans-serif;
+    background-color: #0C2840;
+    font-size: 14p;
+    color: white;
 }
+
+ 
+h1 {
+    color: #A3BFBF;
+    font-weight: 700;
+}  
+
+footer.bottom {
+    border: 1px solid #F2E6CE; 
+    /* border ramka, solid linia ciągła, dotted kropkowana, dashed przerywana */
+    padding: 10px 5px;
+    /* odstęp wewnętrzny*/
+    text-align: center;
+    /*wyrównanie teskstu - lewy, prawy, centralnie, wyjustowany, left, right, center, justify*/
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    /*margines od góry,prawo,lewo,od dołu*/
+    margin: 20px 10px;
+    /*shorthand margin - 20 góra/dół, 10 prawo/lewo*/
+    margin: 20px 5px 20px 10px;
+    /*wymiary marginesu ustawiany zgodnie ze wskazówki zegara*/
+    margin: 20px 10px 5px;
+    /*margines 20 góra, 10 prawo/lewo, 5od dołu*/ 
+
+}
+    
+
+/* #main {
+    color: red;
+}
+
+.paragraph {
+    color: greenyellow;
+}
+
+p {
+    color: indigo;
+}
+#test #main {
+    color: rgb(77, 189, 233);
+} */
