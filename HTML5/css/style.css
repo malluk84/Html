@@ -1,92 +1,222 @@
 body {
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: #0C2840;
-    font-size: 14p;
-    color: white;
+    font-size: 14px;
+    color: #FFFFFF;
 }
 
- 
+/* header */
+
+/* 
+    header
+    - dodajemy bg color na cały header (skorzystaj z klasy)
+    - ustawiamy linki obok siebie (style będą dotyczyć listy z elementami <li>)
+    - przesuwamy sekcję z linkami do prawej strony (justify-content z flexboxa) - style dla kontenera <nav> wewnątrz <header class="topHeader">
+    
+    linki 
+    - pogrubione, 
+    - inny kolor niż bg color headera
+    - wyłączamy podkreślenie
+    - zmiana stanu na hover + animacja na przejście
+    - text-decoration - odpowiada za podkreślenie (wartość "none" ją wyłączy)
+    wskazówki:
+    - ul li a -> selektor dla hiperłącza w liście elementów
+    - header.klasa - selektor dla headera o konkretnej klasie
+    - warto stylować "od góry" tzn schodzimy w dół (w drzewie HTML) z dokładnością stylów
+*/
+
+header.topHeader {
+    background-color: cadetblue;
+    height: 100px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+header.topHeader nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+header.topHeader ul {
+    list-style: none;
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+}
+
+header.topHeader nav ul li a {
+    padding: 10px 15px;
+    background-color: coral;
+    transition: .3s all;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+}
+
+header.topHeader ul li a:hover {
+    background-color: wheat;
+}
+
+/* header - end */
+
 h1 {
     color: #A3BFBF;
     font-weight: 700;
-}  
-h2 {
-    color: white;
-    font-weight: 300;
 }
+
+/* form */
 
 form#contactForm {
     width: 50%;
 }
 
-/* form#contactForm - odnosi się do form > label > div > span > p */
+form#contactForm input,
+form#contactForm textarea {
+    border-radius: 5px;
+    padding: 5px;
+}
 
-/* Formularz */
 form#contactForm > label {
     display: flex;
     flex-direction: column;
     
+    /* margin-top: 20px; */
 }
-/* form#contactForm > label - odnosi się form > label */
+
+form#contactForm > label > span {
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+form#contactForm div > label > span {
+    font-weight: 700;
+}
+
+/* 
+    label nad inputem:
+    - pogrubienie
+    - margin 5px od inputa
+    label przy checkboxie/radio:
+    - pogrubienie
+*/
+
 form#contactForm > div,
 form#contactForm > label {
     margin-top: 20px;
 }
-form#contactForm > label > span {
-    font-weight: bold;
-    margin-bottom: 2px;
-}
-form#contactForm > div > label > span {
-    font-weight: 700;
+
+form#contactForm > div:hover {
+    /*  */
 }
 
-form#contactForm input[type=submit]  {
+/* 
+    form div .red {} - wskazujemy na element o klasie red wewnątrz <div>, który jest wewnatrz <form>
+    form div.red {} - wskazujemy na div o klasie red wewnątrz <form>
+*/
+
+/* style dla przycisku */
+form#contactForm input[type=submit] {
+    /* 
+        margines 10px od góry
+        padding 2px 5px
+        text-transform: uppercase; Aaa -> AAA
+        background-color: #ffffff;
+        color: #000000;
+        font-weight: 700;
+        wielkosc fonta 11px;
+        border: 0px;
+    */
+
     margin-top: 10px;
-    padding: 2px 5px;
+    padding: 10px 15px;
     text-transform: uppercase;
-    background-color: white;
-    color: black;
+    
+    background: linear-gradient(0deg, rgba(10,25,92,1) 0%, rgba(255,255,255,1) 100%);
+    color: #000;
+
     font-weight: 700;
     font-size: 11px;
-    border: opx;
+    border: 0px;
+    
+    /* sterowanie procesem przejścia np. ze stanu podstawowego na stan "najazd", podajemy czas i właściwości które mają ulec zmianie w podanym czasie (w tym przypadku wszystkie - all) */
+    transition: .3s all;
 }
 
+/* pseudoklasy */
+/* :hover - najazd myszką */
 
-/* Koniec Formularza */ 
+form#contactForm input[type=submit]:hover {
+    /* rgba - a odpowiada za kanał alpha (przezroczystość), 1 oznacza 100% wypełnienia, 0.1 - 10% */
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(10,25,92,1) 100%);
+    cursor: pointer;
+    color: #fff; /* color - kolor tekstu (na buttonie) */
+}
 
+/* form#contactForm > label */
+/* odnosi się do form > label - label jest bezpośrednim dzieckiem form */
+
+/* form#contactForm label */
+/* odnosi się do np. form > div > div > p > span > label - label leży gdziekolwiek w strukturze HTML */
+
+/* form - end */
+
+/* footer */
 footer.bottom {
-    border: 1px solid #F2E6CE; 
-    /* border ramka, solid linia ciągła, dotted kropkowana, dashed przerywana */
+    /* ramka, solid - ciągła linia, dotted - kropkowana, dashed - przerywana*/
+    border: 1px solid #F2E6CE;
+
+    /* odstępy wewnętrzne */
     padding: 10px 5px;
-    /* odstęp wewnętrzny*/
+
+    /* wyrównanie tekstu - left, right, center, justify */
     text-align: center;
-    /*wyrównanie teskstu - lewy, prawy, centralnie, wyjustowany, left, right, center, justify*/
+
+    /* margines - od góry */
     margin-top: 20px;
     margin-bottom: 20px;
     margin-right: 10px;
     margin-left: 10px;
-    /*margines od góry,prawo,lewo,od dołu*/
+
+    /* shorthand margin - 20px góra/dół, 10px lewo/prawo */
     margin: 20px 10px;
-    /*shorthand margin - 20 góra/dół, 10 prawo/lewo*/
+
+
+    /* margin - zgodnie z ruchem wskazówek zegara - góra/prawo/dół/lewo */
     margin: 20px 5px 20px 10px;
-    /*wymiary marginesu ustawiany zgodnie ze wskazówki zegara*/
+
+    /* margin - 20px góra, 10px lewo/prawo, 5px od dołu */
     margin: 20px 10px 5px;
-    /*margines 20 góra, 10 prawo/lewo, 5od dołu*/ 
 
 }
-    
 
-/* #main {
+/* 
+    <footer class="bottom highlited main">
+        <p>...</p>
+    </footer>
+    <article id="first">
+        <p>....</p>
+    </article>
+            
+            klasa           id
+    HTML    bottom          first
+    CSS     .bottom         #first
+*/
+
+
+
+/* 
+.paragraph {
+    color: green;
+}
+p {
+    color: purple;
+}
+#main {
     color: red;
 }
-
-.paragraph {
-    color: greenyellow;
-}
-
-p {
-    color: indigo;
-}
 #test #main {
-    color: rgb(77, 189, 233);
+    color: blue;
 } */
