@@ -10,6 +10,49 @@ h1 {
     color: #A3BFBF;
     font-weight: 700;
 }  
+h2 {
+    color: white;
+    font-weight: 300;
+}
+
+form#contactForm {
+    width: 50%;
+}
+
+/* form#contactForm - odnosi się do form > label > div > span > p */
+
+/* Formularz */
+form#contactForm > label {
+    display: flex;
+    flex-direction: column;
+    
+}
+/* form#contactForm > label - odnosi się form > label */
+form#contactForm > div,
+form#contactForm > label {
+    margin-top: 20px;
+}
+form#contactForm > label > span {
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+form#contactForm > div > label > span {
+    font-weight: 700;
+}
+
+form#contactForm input[type=submit]  {
+    margin-top: 10px;
+    padding: 2px 5px;
+    text-transform: uppercase;
+    background-color: white;
+    color: black;
+    font-weight: 700;
+    font-size: 11px;
+    border: opx;
+}
+
+
+/* Koniec Formularza */ 
 
 footer.bottom {
     border: 1px solid #F2E6CE; 
